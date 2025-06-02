@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-// ignore: depend_on_referenced_packages
 void main() {
   runApp(const MyApp());
 }
@@ -42,61 +41,66 @@ class MyHomePage extends StatefulWidget {
 
   final String title;
 
+  
+  
+  
   @override
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
   final foto = const CircleAvatar(
-    backgroundImage: NetworkImage(
-      'https://media-for2-2.cdn.whatsapp.net/v/t61.24694-24/473403305_1168677387974548_3457576228408630395_n.jpg?ccb=11-4&oh=01_Q5Aa1gEqe7bTiME8BxL12-HbCykCG4yk5WCDKwrqvXMhHmd3-Q&oe=684B0305&_nc_sid=5e03e0&_nc_cat=109',
-    ),
-    radius: 150,
+   backgroundImage: NetworkImage('https://tse1.mm.bing.net/th?id=OIP.O7C6zj74BSyiIP3YjfsVRAHaHa&pid=Api&P=0&h=180'),
+  radius: 150,
   );
   final nome = const Text(
-    'Jardesson santos ',
+    'jardesson dos santos',
     style: TextStyle(fontSize: 30),
     textAlign: TextAlign.center,
   );
   final botaotelefone = IconButton(
-    color: const Color.fromARGB(255, 56, 107, 247),
+    color: const Color.fromARGB(255, 255, 3, 3),
     icon: const Icon(Icons.phone),
     onPressed: () {
       launchUrl(Uri(scheme: 'tel', path: '9999-9999'));
     },
   );
 
-  final botaoemail = IconButton(
-    color: const Color.fromARGB(255, 56, 107, 247),
+   final botaoemail = IconButton(
+    color: const Color.fromARGB(255, 255, 3, 3),
     icon: const Icon(Icons.email),
     onPressed: () {
       launchUrl(Uri(scheme: 'email', path: 'jardesson@gamail.com'));
     },
   );
 
-  final botaosms = IconButton(
-    color: const Color.fromARGB(255, 56, 107, 247),
+ final botaosms= IconButton(
+    color:  const Color.fromARGB(255, 255, 3, 3),
     icon: const Icon(Icons.sms),
     onPressed: () {
       launchUrl(Uri(scheme: 'sms', path: '9999-9999'));
     },
   );
 
-  Widget build(BuildContext contexto) {
-    return Scaffold(
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+  
+ Widget build(BuildContext contexto){
+  return Scaffold(
+    body: Column(
+      mainAxisAlignment: MainAxisAlignment.center,
         children: [
           foto,
           nome,
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: [botaoemail, botaosms, botaotelefone],
-          ),
+            children: [
+              botaoemail, botaosms, botaotelefone
+            ],
+          )
         ],
-      ),
-    );
-  }
-
+    )
+  );
+ }
+ 
   static void launchUrl(Uri uri) {}
+
 }
